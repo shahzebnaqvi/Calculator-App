@@ -1,4 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
+import 'package:flutter/widgets.dart';
 import 'package:function_tree/function_tree.dart';
 
 class Calculator extends StatefulWidget {
@@ -39,121 +42,128 @@ class _CalculatorState extends State<Calculator> {
       ),
       drawer: Drawer(
         child: Container(
-            //child: Your widget,
-            color: colorback,
-            width: double.infinity,
-            height: double.infinity,
-            child: Container(
-              child: Column(
-                children: [
-                  SizedBox(
-                    height: 100.0,
-                    child: DrawerHeader(
-                      margin: EdgeInsets.all(0.0),
-                      padding: EdgeInsets.only(top: 10.0),
-                      child: Text(
-                        "Calculator",
-                        style: TextStyle(
-                            color: colortext,
-                            fontSize: MediaQuery.of(context).size.width * 0.1),
-                      ),
+          //child: Your widget,
+          color: colorback,
+          width: double.infinity,
+          height: double.infinity,
+          child: Container(
+            child: Column(
+              children: [
+                SizedBox(
+                  height: 100.0,
+                  child: DrawerHeader(
+                    margin: EdgeInsets.all(0.0),
+                    padding: EdgeInsets.only(top: 10.0),
+                    child: Text(
+                      "Calculator",
+                      style: TextStyle(
+                          color: colortext,
+                          fontSize: MediaQuery.of(context).size.width * 0.1),
                     ),
                   ),
-                  Text(
-                    "Themes",
-                    style: TextStyle(
-                        color: colortext,
-                        fontSize: MediaQuery.of(context).size.width * 0.05),
-                  ),
-                  InkWell(
-                    onTap: () {
-                      setState(() {
-                        colorbut1 = Colors.grey.shade600;
-                        colorbut2 = Colors.grey.shade800;
-                        colorbut3 = Colors.orange;
-                        colortext = Colors.white;
-                        colorback = Colors.black;
-                        colordrawericon = Colors.white;
-                      });
-                    },
-                    child: ListTile(
-                      title: Text(
-                        "Dark",
-                        style: TextStyle(color: colortext),
-                      ),
-                      trailing: Wrap(
-                        children: [
-                          CircleAvatar(
-                            backgroundColor: Colors.grey.shade800,
-                          ),
-                          CircleAvatar(
-                            backgroundColor: Colors.grey.shade600,
-                          ),
-                          CircleAvatar(
-                            backgroundColor: Colors.orange,
-                          )
-                        ],
-                      ),
+                ),
+                Text(
+                  "Themes",
+                  style: TextStyle(
+                      color: colortext,
+                      fontSize: MediaQuery.of(context).size.width * 0.05),
+                ),
+                InkWell(
+                  onTap: () {
+                    setState(() {
+                      colorbut1 = Colors.grey.shade600;
+                      colorbut2 = Colors.grey.shade800;
+                      colorbut3 = Colors.orange;
+                      colortext = Colors.white;
+                      colorback = Colors.black;
+                      colordrawericon = Colors.white;
+                    });
+                  },
+                  child: ListTile(
+                    title: Text(
+                      "Dark",
+                      style: TextStyle(color: colortext),
+                    ),
+                    trailing: Wrap(
+                      children: [
+                        CircleAvatar(
+                          backgroundColor: Colors.grey.shade800,
+                        ),
+                        CircleAvatar(
+                          backgroundColor: Colors.grey.shade600,
+                        ),
+                        CircleAvatar(
+                          backgroundColor: Colors.orange,
+                        )
+                      ],
                     ),
                   ),
-                  InkWell(
-                    onTap: () {
-                      light();
-                    },
-                    child: ListTile(
-                      title: Text(
-                        "Light",
-                        style: TextStyle(color: colortext),
-                      ),
-                      trailing: Wrap(
-                        children: [
-                          CircleAvatar(
-                            backgroundColor: Colors.grey,
-                          ),
-                          CircleAvatar(
-                            backgroundColor: Colors.blue,
-                          ),
-                          CircleAvatar(
-                            backgroundColor: Colors.blue.shade900,
-                          )
-                        ],
-                      ),
+                ),
+                InkWell(
+                  onTap: () {
+                    light();
+                  },
+                  child: ListTile(
+                    title: Text(
+                      "Light",
+                      style: TextStyle(color: colortext),
+                    ),
+                    trailing: Wrap(
+                      children: [
+                        CircleAvatar(
+                          backgroundColor: Colors.grey,
+                        ),
+                        CircleAvatar(
+                          backgroundColor: Colors.blue,
+                        ),
+                        CircleAvatar(
+                          backgroundColor: Colors.blue.shade900,
+                        )
+                      ],
                     ),
                   ),
-                  InkWell(
-                    onTap: () {
-                      setState(() {
-                        colorbut1 = Colors.orange;
-                        colorbut2 = Colors.blue.shade900;
-                        colorbut3 = Colors.red;
-                        colortext = Colors.blue.shade900;
-                        colorback = Colors.white;
-                        colordrawericon = Colors.blue.shade900;
-                      });
-                    },
-                    child: ListTile(
-                      title: Text(
-                        "Colored",
-                        style: TextStyle(color: colortext),
-                      ),
-                      trailing: Wrap(
-                        children: [
-                          CircleAvatar(
-                            backgroundColor: Colors.orange,
-                          ),
-                          CircleAvatar(
-                            backgroundColor: Colors.blue.shade900,
-                          ),
-                          CircleAvatar(
-                            backgroundColor: Colors.red,
-                          )
-                        ],
-                      ),
+                ),
+                InkWell(
+                  onTap: () {
+                    setState(() {
+                      colorbut1 = Colors.orange;
+                      colorbut2 = Colors.blue.shade900;
+                      colorbut3 = Colors.red;
+                      colortext = Colors.blue.shade900;
+                      colorback = Colors.white;
+                      colordrawericon = Colors.blue.shade900;
+                    });
+                  },
+                  child: ListTile(
+                    title: Text(
+                      "Colored",
+                      style: TextStyle(color: colortext),
+                    ),
+                    trailing: Wrap(
+                      children: [
+                        CircleAvatar(
+                          backgroundColor: Colors.orange,
+                        ),
+                        CircleAvatar(
+                          backgroundColor: Colors.blue.shade900,
+                        ),
+                        CircleAvatar(
+                          backgroundColor: Colors.red,
+                        )
+                      ],
                     ),
                   ),
-                ],
-              ),
-            )),
+                ),
+                Align(
+                  alignment: Alignment.bottomCenter,
+                  child: Container(
+                    child: Text("Developed by SHAHZEB"),
+                  ),
+                )
+              ],
+            ),
+          ),
+        ),
       ),
       backgroundColor: colorback,
       body: Column(
